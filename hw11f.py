@@ -78,7 +78,7 @@ def philosoph_dinner(num_phi=2):
     global vilki, phil_list, phil_num_dinners
     phil_num_dinners = [0 for _ in range(num_phi)]
     phil_list = [(phil_var[_ if _ < 5 else 5]) for _ in range(num_phi)]
-    vilki = ["" for _ in range(num_phi)]
+    vilki = ["" for _ in range(num_phi if num_phi != 1 else 2)]
     threads_phi = (Thread(target=phi, args=(_,)) for _ in range(num_phi))
     for t in threads_phi:
         t.start()
